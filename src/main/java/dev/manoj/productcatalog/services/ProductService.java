@@ -25,7 +25,7 @@ public interface ProductService {
     //
     // }
 
-    boolean deleteProduct(Long productId);
+    Product deleteProduct(Long productId);
 }
 
 // update product with id 123

@@ -134,8 +134,11 @@ public class FakeStoreProductServiceImpl implements ProductService {
 
     @Override
 
-    public boolean deleteProduct(Long productId) {
-        return false;
+    public Product deleteProduct(Long productId) {
+        FakeStoreProductDto fakeStoreProductDto = getSingleProduct(productId).getBody();
+        Product product = convertFakeStoreProductDtoToProduct(fakeStoreProductDto);
+        product.setIsDeleted(true);
+        return product;
     }
 
     //RequestForEntity methods

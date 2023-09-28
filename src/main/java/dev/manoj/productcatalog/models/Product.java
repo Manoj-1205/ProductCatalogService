@@ -14,6 +14,7 @@ public class Product extends BaseModel {
     private Category category;
     private String imageUrl;
     private Rating rating;
+    private Boolean isDeleted;
 
 
 }
