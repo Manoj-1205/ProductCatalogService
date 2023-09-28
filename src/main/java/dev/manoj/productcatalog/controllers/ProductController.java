@@ -82,8 +82,11 @@ public class ProductController {
     }
 
     @DeleteMapping("/{productId}")
-    public String deleteProduct(@PathVariable("productId") Long productId) {
-        return "Deleting a product with id: " + productId;
+    public ProductDto deleteProduct(@PathVariable("productId") Long productId) {
+        Product product=productService.deleteProduct(productId);
+        ProductDto responseProductDto = convertProductToProductDto(product);
+        responseProductDto.setIsDeleted(product.getIsDeleted());
+        return responseProductDto;
     }
 
 

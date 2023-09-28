@@ -20,5 +20,6 @@ public class ProductDto {
     private String category;
     private RatingDTO rating;
 //    private String spec;
+    private Boolean isDeleted;
 
 }
